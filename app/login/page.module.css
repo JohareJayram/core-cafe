@@ -1,0 +1,193 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  background: var(--bg);
+}
+
+.imageSide {
+  display: none;
+  background-image: url('/images/menu/gallery1.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(30, 20, 15, 0.85) 0%, rgba(30, 20, 15, 0.4) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 64px;
+}
+
+.imageTagline {
+  color: #fff;
+  line-height: 1.2;
+}
+
+.formSide {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  position: relative;
+}
+
+/* ── Card ── */
+.card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 440px;
+  background: linear-gradient(135deg, var(--surface), var(--surface-alt));
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-xl);
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-shadow: var(--shadow-lg), var(--shadow-gold);
+  animation: fadeInUp 0.5s var(--ease-spring) both;
+}
+
+/* ── Logo ── */
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-decoration: none;
+}
+
+.mobileLogo {
+  display: none;
+  align-self: center;
+  margin-bottom: 8px;
+}
+
+.logoCore {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+}
+
+.mobileLogo .logoCore { text-align: center; }
+
+.logoCafe {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--text-muted);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.mobileLogo .logoCafe { text-align: center; }
+
+@media (min-width: 900px) {
+  .imageSide {
+    display: block;
+    flex: 1;
+  }
+}
+
+
+/* ── Tabs ── */
+.tabs {
+  display: flex;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 4px;
+  gap: 4px;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  text-align: center;
+}
+
+.tab:hover { color: var(--text-primary); }
+
+.tabActive {
+  background: var(--gold-muted);
+  color: var(--gold) !important;
+  border: 1px solid var(--border-gold);
+}
+
+/* ── Form ── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.demoHint {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  font-size: 12px;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.demoHint strong { color: var(--gold); }
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.divider::before, .divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.disclaimer {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .mobileLogo {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .card { padding: 32px 24px; border-radius: var(--radius-lg); }
+  .mobileLogo { display: flex; }
+}

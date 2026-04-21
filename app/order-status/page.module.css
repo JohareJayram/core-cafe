@@ -1,0 +1,230 @@
+.main { padding-top: 100px; padding-bottom: 80px; min-height: 100vh; }
+.centeredMain { padding-top: 100px; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+.notFound { display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
+
+.inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.header { text-align: center; }
+.orderId { font-size: 13px; color: var(--text-muted); margin-top: 8px; }
+
+/* ── Progress Tracker ── */
+.tracker {
+  display: flex;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  position: relative;
+}
+
+.trackStep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+  gap: 8px;
+}
+
+.stepCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--surface-alt);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-muted);
+  transition: all 0.4s var(--ease);
+  z-index: 1;
+}
+
+.stepCircle.complete {
+  background: var(--success);
+  border-color: var(--success);
+  color: #fff;
+}
+
+.stepCircle.active {
+  background: var(--gold-muted);
+  border-color: var(--gold);
+  color: var(--gold);
+  animation: pulse-gold 2s infinite;
+}
+
+.stepInfo { text-align: center; }
+
+.stepLabel {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-align: center;
+  display: block;
+  white-space: nowrap;
+}
+
+.stepLabelActive { color: var(--gold); font-weight: 700; }
+
+.connector {
+  position: absolute;
+  top: 20px;
+  left: 60%;
+  right: -40%;
+  height: 2px;
+  background: var(--border);
+  transition: background 0.5s var(--ease);
+  z-index: 0;
+}
+
+.connectorFilled { background: var(--success); }
+
+/* ── Status Card ── */
+.statusCard {
+  background: var(--surface);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.statusMain {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.statusIcon {
+  font-size: 40px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.statusText {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.statusEta {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.elapsedBadge {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+/* ── Details Card ── */
+.detailsCard {
+  background: linear-gradient(135deg, var(--surface), var(--surface-alt));
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  box-shadow: var(--shadow-md), var(--shadow-gold);
+}
+
+.detailsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.tableTag {
+  font-size: 13px;
+  color: var(--gold);
+  background: var(--gold-muted);
+  border: 1px solid var(--border-gold);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.detailItems {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.detailItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  background: var(--surface-alt);
+  border-radius: var(--radius-sm);
+}
+
+.detailEmoji { font-size: 22px; width: 32px; text-align: center; }
+
+.detailImage {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.detailName  { flex: 1; font-size: 14px; color: var(--text-primary); }
+.detailPrice { font-weight: 700; color: var(--gold); }
+
+.detailTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.totalAmount { color: var(--gold); font-size: 20px; }
+
+.note {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 12px;
+  padding: 8px 12px;
+  background: var(--surface-alt);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--gold);
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .inner { padding: 0 16px; }
+  .tracker { flex-direction: column; align-items: flex-start; }
+  .trackStep { flex-direction: row; width: 100%; }
+  .stepInfo { text-align: left; }
+  .stepLabel { white-space: normal; font-size: 10px; }
+  .stepCircle { width: 34px; height: 34px; font-size: 12px; }
+  .connector { display: none; }
+  .statusCard { flex-direction: column; align-items: flex-start; }
+  .actions { flex-direction: column; }
+  .actions :global(.btn) { width: 100%; }
+}
