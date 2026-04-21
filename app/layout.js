@@ -1,6 +1,5 @@
 import './globals.css';
-import { CartProvider } from '../lib/cartContext';
-import { OrderProvider } from '../lib/orderContext';
+import { Providers } from './Providers';
 
 export const metadata = {
   title: 'CORE Cafe — Order Freshly Brewed Coffee Without Waiting',
@@ -59,11 +58,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <OrderProvider>
-          <CartProvider>
-            {children}
-          </CartProvider>
-        </OrderProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
